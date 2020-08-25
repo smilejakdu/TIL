@@ -40,3 +40,18 @@ phone = data["phone"]
 ```
 
 이렇게 수정하면 된다.
+
+만약에 여러개 반복문을 돌려서 확인을 하고싶다면
+
+```python
+            q_dict = {
+                'group_initial': data['group_initial'],
+                'name': data['name'],
+                'email': data['email'],
+                'phone': data['phone'],
+            }
+            for q in q_dict:
+                if Group.objects.filter(**{q: q_dict[q]}).exists():
+                    return JsonResponse({"message": f"DUPLICATE_{q_dict[q]}"})
+
+```
