@@ -26,3 +26,17 @@ phone = data["phone"]
 이거만 바뀌지 나머지는 변하지 않는다.
 
 코드 수정이 안될까 ??
+
+```python
+            q_dict = {
+                'group_initial': data['group_initial'],
+                'phone': data['phone'],
+                'name': data['name'],
+                'email': data['email']}
+
+            if Group.objects.filter(**q_dict).exists():
+                return JsonResponse({"message": f"DUPLICATE_{q_dict}"})
+
+```
+
+이렇게 수정하면 된다.
