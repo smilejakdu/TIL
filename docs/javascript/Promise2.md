@@ -185,6 +185,9 @@ p()
 /*
 보통 비동기 작업을 할때, callback 함수를 인자로 넣어 로직이 끝나면 callback 함수를 호출합니다. 
 이런 경우 함수가 아래로 진행되지 않고, callback 함수 안으로 진행됩니다. 
+
+callback 헬이라는 얘기가 여기서 나오게 된다.
+결과 자체는 문제가 없을것이다.
 */
 
 function c(callback) {
@@ -226,7 +229,8 @@ p().then(() => {
 .then(() => p())
 .then(p)
 .then(() => {
-    con
+    console.log('4000ms 후에 fulfiled 됩니다');
+});
 ```
 
 ```javascript
@@ -237,7 +241,6 @@ value 가 프로미스 객체인지 아닌지 알 수 없는 경우, 사용하�
 */
 
 Promise.resolve(/* value */);
-
 Promise.resolve(
   new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -246,7 +249,7 @@ Promise.resolve(
   })
 ).then((data) => {
   console.log(
-    "프로미스 객체인 경우, resolve 된 결과를 받아 thne 이 실행됩니다.",
+    "프로미스 객체인 경우, resolve 된 결과를 받아 then 이 실행됩니다.",
     data
   );
 });
@@ -259,6 +262,8 @@ Promise.resolve("bar").then((data) => {
 ```javascript
 /*
 Promise.reject 를 사용하면, catch 로 연결된 rejected 상태로 변경됩니다. 
+value 는 주로 에러객체가 된다고 생각하면 된다.
+then 을 넣는다고 크게 의미가 없고 바로 catch 쪽으로 넘어가게 된다.
 */
 
 Promise.reject(/* value */);
@@ -300,7 +305,6 @@ Promise.all([p(1000), p(2000), p(3000)]).then((messages) => {
 배열의 모든 프로미스 객체들 중 가장 먼저 fulfilled 된 것으로, then 의 함수가 실행됩니다. 
 then 의 함수의 인자로 가장 먼저 fulfilled 된 프로미스 객체의 resolve 인자값을 돌려줍니다. 
 */
-
 // Promise.race([프로미스 객체들]);
 
 function p(ms) {
