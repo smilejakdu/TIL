@@ -232,12 +232,19 @@ function p(ms) {
 }
 
 // Promise.all
+// Promise.all 은 여러 프로미스 가 전부 fulfilled 되었을때 결과값을
+// 넘기는 함수이다.
+
 (async function main() {
   const results = await Promise.all([p(1000), p(2000), p(3000)]);
   console.log(results);
 })();
 
-// Promise.race
+/* Promise.race
+Promise.race 함수는 여러 프로미스중에 가장 먼저 완료된 
+것의 결과값을 넘기는 메소드이다.
+*/
+
 (async function main() {
   const result = await Promise.race([p(1000), p(2000), p(3000)]);
   console.log(result);
