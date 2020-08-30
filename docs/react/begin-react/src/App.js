@@ -1,13 +1,14 @@
 import React from "react";
 import Hello from "./Hello";
+import InputSample from "./InputSample";
 import Wrapper from "./Wrapper";
 
 const App = () => {
   return (
-    <Wrapper>
-      <Hello name="react" color="red" isSpecial />
-      <Hello color="pink" />
-    </Wrapper>
+    <div>
+      <Counter />
+      <InputSample />
+    </div>
   );
 };
 
