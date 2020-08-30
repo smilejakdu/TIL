@@ -1,12 +1,13 @@
 import React from "react";
 
-const Hello = ({ color, name }) => {
+const Hello = ({ color, name, isSpecial }) => {
   return (
     <div
       style={{
-        color: color,
+        color,
       }}
     >
+      <b>{isSpecial ? "스페셜하다!" : "낫스페셜"}</b>
       안녕하세요{name}
     </div>
   );
