@@ -194,3 +194,178 @@ const Counter = () => {
 
 export default Counter;
 ```
+
+# InputSample , App
+
+```javascript
+import React, { useState } from "react";
+
+const InputSample = () => {
+  const [text, setText] = useState("");
+  const onChange = (e) => {
+    console.log(e.target.value);
+  };
+
+  const onReset = () => {
+    setText("");
+  };
+  return (
+    <div>
+      <input onChange={onChange} value={text} />
+      <button onClick={onReset}>초기화</button>
+      <div>
+        <b>값 : </b>
+        {text}
+      </div>
+    </div>
+  );
+};
+
+export default InputSample;
+```
+
+```javascript
+import React from "react";
+import Hello from "./Hello";
+import InputSample from "./InputSample";
+import Wrapper from "./Wrapper";
+import Counter from "./Counter";
+
+const App = () => {
+  return (
+    <div>
+      <Counter />
+      <InputSample />
+    </div>
+  );
+};
+
+export default App;
+```
+
+# InputSample , App 여러개
+
+```javascript
+import React, { useState } from "react";
+
+const InputSample = () => {
+  const [inputs, setInputs] = useState({
+    name: "",
+    nickname: "",
+  });
+
+  const { name, nickname } = inputs;
+
+  const onChange = (e) => {
+    const { name, value } = e.target;
+
+    setInputs({
+      ...inputs,
+      [name]: value,
+    });
+  };
+
+  const onReset = () => {};
+
+  return (
+    <div>
+      <input onChange={onChange} name="name" placeholder="name" />
+      <input type="text" placeholder="nickname" name="nickname" />
+      <button onClick={onReset}>초기화</button>
+      <div>
+        <b>값 : </b>
+        {name}
+        {nickname}
+      </div>
+    </div>
+  );
+};
+
+export default InputSample;
+```
+
+```javascript
+import React from "react";
+import Hello from "./Hello";
+import InputSample from "./InputSample";
+import Wrapper from "./Wrapper";
+import Counter from "./Counter";
+
+const App = () => {
+  return (
+    <div>
+      <Counter />
+      <InputSample />
+    </div>
+  );
+};
+
+export default App;
+```
+
+```javascript
+import React, { useState } from "react";
+
+const InputSample = () => {
+  const [inputs, setInputs] = useState({
+    name: "",
+    nickname: "",
+  });
+
+  const { name, nickname } = inputs;
+
+  const onChange = (e) => {
+    const { name, value } = e.target;
+
+    setInputs({
+      ...inputs,
+      [name]: value,
+    });
+  };
+
+  const onReset = () => {
+    setInputs({
+      name: "",
+      nickname: "",
+    });
+  };
+
+  return (
+    <div>
+      <input onChange={onChange} name="name" placeholder="name" value={name} />
+      <input
+        onChange={onChange}
+        placeholder="nickname"
+        name="nickname"
+        value={nickname}
+      />
+      <button onClick={onReset}>초기화</button>
+      <div>
+        <b>값 : </b>
+        {name}({nickname})
+      </div>
+    </div>
+  );
+};
+
+export default InputSample;
+```
+
+```javascript
+import React from "react";
+import Hello from "./Hello";
+import InputSample from "./InputSample";
+import Wrapper from "./Wrapper";
+import Counter from "./Counter";
+
+const App = () => {
+  return (
+    <div>
+      <Counter />
+      <InputSample />
+    </div>
+  );
+};
+
+export default App;
+```
