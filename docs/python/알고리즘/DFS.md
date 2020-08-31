@@ -57,4 +57,7 @@ visited = [False] * 9
 # 정의된 DFS 함수 호출
 
 dfs(graph , 1 , visited)
+
+# 출력
+# 1 2 7 6 8 3 4 5
 ```
