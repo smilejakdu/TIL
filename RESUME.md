@@ -38,7 +38,7 @@ https://github.com/smilejakdu/foodly-refactoring
 ##### 2019 Unsoft
 
 안드로이드 개발자 취직
-회아세어 급하게 python , php 를 공부함
+회사에서 급하게 python , php 를 공부함
 pyhon crawling , php 웹 공부 후 나서 업무 진행
 
 - python crawling
