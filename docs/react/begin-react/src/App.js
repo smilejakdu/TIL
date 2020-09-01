@@ -3,12 +3,12 @@ import Hello from "./Hello";
 import InputSample from "./InputSample";
 import Wrapper from "./Wrapper";
 import Counter from "./Counter";
+import UserList from "./UserList";
 
 const App = () => {
   return (
     <div>
-      <Counter />
-      <InputSample />
+      <UserList />
     </div>
   );
 };
