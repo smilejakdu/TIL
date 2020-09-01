@@ -116,3 +116,22 @@ export default App;
 ### Route 하나에 여러 개의 path 설정하기
 
 Route 하나에 여러 개의 path 를 지정하는 것은 최신 버전의 리액트 라우터 v5 부터 적용된 기능입니다.
+
+```javascript
+import React from "react";
+import "./App.css";
+import { Route, Link } from "react-router-dom";
+import About from "./About";
+import Home from "./Home";
+
+function App() {
+  return (
+    <div>
+      <Route path="/" component={Home} exact={true} />
+      <Route path={["/about", "/info"]} component={About} />
+    </div>
+  );
+}
+
+export default App;
+```

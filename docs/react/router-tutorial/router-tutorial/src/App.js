@@ -7,17 +7,8 @@ import Home from "./Home";
 function App() {
   return (
     <div>
-      <ul>
-        <li>
-          <Link to="/">home</Link>
-        </li>
-        <li>
-          <Link to="/about">소개</Link>
-        </li>
-      </ul>
-      <hr />
       <Route path="/" component={Home} exact={true} />
-      <Route path="/about" component={About} exact={true} />
+      <Route path={["/about", "/info"]} component={About} />
     </div>
   );
 }
