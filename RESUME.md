@@ -9,6 +9,26 @@
 
 https://velog.io/@ash3767
 
+##### 개인프로젝트 (dev_chart)
+
+https://github.com/smilejakdu/dev_chart_front
+
+회원가입과 로그인을 해야하며 , user 가 사용하고있는 programming 언어 ,
+프레임워크를 선택해서 chart 를 보여주게 됩니다.
+
+**Back**
+
+- django
+- modeling
+- sign_up api , sign_in api , cart api
+- category_product api
+
+**Front**
+
+- React
+- Redux
+- Redux-saga
+
 ##### 2020 KaiPharm (현)
 
 ( 진행 중 )
